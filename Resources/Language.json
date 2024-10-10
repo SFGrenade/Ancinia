@@ -1,0 +1,58 @@
+{
+  "DE": {
+  },
+  "EN": {
+    "UI": {
+      "zSFGrenadeTestOfTeamwork_HornetInvName": "Weaver's Necklace",
+      "zSFGrenadeTestOfTeamwork_HornetInvDesc": "A necklace Hornet gave you to show her trust.<br>She will help you traverse faded passages."
+    },
+    "Achievements": {
+      "zSFGrenadeTestOfTeamwork_Achievement_Title_DefeatedWeaverPrincess": "Weaver Princess",
+      "zSFGrenadeTestOfTeamwork_Achievement_Text_DefeatedWeaverPrincess": "Defeat the Weaver Princess"
+    },
+    "CP2": {
+      "zSFGrenadeTestOfTeamwork_TotLoreTablet": "Those born of god<br>Given higher thought<br>Work together to achieve<br>Lost power to retrieve",
+      "zSFGrenadeTestOfTeamwork_TotCreditsTablet": "Test of Teamwork<br>by SFGrenade<br>Credits<br><page>SFGrenade:<br>Ideas<br>Sprites & Music<br>Programming<br><page>NoSoundlow:<br>Main idea of DreamKing<br><page>profdrmops:<br>Boss idea<br>Several sprites<br><page>Zaliant:<br>Music<br>Major playtesting<br>Platforming suggestions<br><page>Chaktis:<br>NPC Sprites<br><page>HelenSB:<br>Translation & Revising<br><page>Clazex:<br>Translation<br><page>SalehAce1:<br>Borrowed code<br>Playtesting<br><page>56:<br>Playtesting<br>Bug reporting<br><page>Araraura:<br>Major bug reporting<br>Playtesting<br><page>Laucian:<br>Platforming suggestions<br><page>Chrome:<br>Platforming suggestions<br><page>fireb0rn:<br>Promotion<br>Playtesting<br>Platforming suggestions<br><page>Astral Ruby:<br>Playtesting<br><page>Special Thanks:<br>NoSoundlow & profdrmops<br>Members of the Hollow Knight Discord<br>Members of the Hollow Knight Modding Discord",
+      "zSFGrenadeTestOfTeamwork_NotFinishedTabled": "Those born of god<br>Given higher thought<br>Will be back for more<br>In the future continue to soar<br><page>tldr:<br>This part is not finished.<br>Thanks for understanding.<br>~ SFGrenade",
+      "zSFGrenadeTestOfTeamwork_NPC_Talk": "...<br><page>This organ doesn't play by itself..."
+    },
+    "Titles": {
+      "zSFGrenadeTestOfTeamwork_WeaverPrincessName_SUPER": "Weaver Princess",
+      "zSFGrenadeTestOfTeamwork_WeaverPrincessName_MAIN": "Hornet",
+      "zSFGrenadeTestOfTeamwork_WeaverPrincessName_SUB": "",
+      "zSFGrenadeTestOfTeamwork_TotAreaTitle_SUPER": "Test of",
+      "zSFGrenadeTestOfTeamwork_TotAreaTitle_MAIN": "Teamwork",
+      "zSFGrenadeTestOfTeamwork_TotAreaTitle_SUB": "",
+      "zSFGrenadeTestOfTeamwork_EndlessAreaTitle_SUPER": "sometimes i think that",
+      "zSFGrenadeTestOfTeamwork_EndlessAreaTitle_MAIN": "i shouldn't be here",
+      "zSFGrenadeTestOfTeamwork_EndlessAreaTitle_SUB": "but i think that's ok"
+    },
+    "Hornet": {
+      "zCUSTOM_HORNET_PRE_FINAL_BATTLE": "You look like you want to show me something.<page>I shall appear when you want, wherever that may be.",
+      "zSFGrenadeTestOfTeamwork_HornetMonologue1": "So this is what you wanted to show me.<page>But who is th-",
+      "zSFGrenadeTestOfTeamwork_HornetMonologue2": "What was that?<br>It came from up there.<page>...<page>Light...<br>Faded light..."
+    },
+    "Enemy Dreams": {
+      "zSFGrenadeTestOfTeamwork_WeaverPrincessDN_1": "Faded light..."
+    },
+    "MISC": {
+      "zTotAreaTitle_Event": "SFGrenadeTestOfTeamwork_TotAreaTitle"
+    }
+  },
+  "ES": {
+  },
+  "FR": {
+  },
+  "IT": {
+  },
+  "JA": {
+  },
+  "KO": {
+  },
+  "PT": {
+  },
+  "RU": {
+  },
+  "ZH": {
+  }
+}
