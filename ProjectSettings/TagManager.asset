@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - TileMap
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Terrain
+  - Player
+  - Transition Gates
+  - Enemies
+  - Projectiles
+  - Hero Detector
+  - Terrain Detector
+  - Enemy Detector
+  - Item
+  - Hero Attack
+  - Particle
+  - Interactive Object
+  - Hero Box
+  - Grass
+  - Enemy Attack
+  - Damage All
+  - Bouncer
+  - Soft Terrain
+  - Corpse
+  - UGUI
+  - Hero Only
+  - ActiveRegion
+  - Map Pin
+  - Orbit Shield
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Far BG 2
+    uniqueID: 1909990891
+    locked: 0
+  - name: Far BG 1
+    uniqueID: 321414983
+    locked: 0
+  - name: Mid BG
+    uniqueID: 784953263
+    locked: 0
+  - name: Immediate BG
+    uniqueID: 2105649581
+    locked: 0
+  - name: Actors
+    uniqueID: 2463600691
+    locked: 0
+  - name: Player
+    uniqueID: 54332527
+    locked: 0
+  - name: Tiles
+    uniqueID: 3624887537
+    locked: 0
+  - name: MID Dressing
+    uniqueID: 1356907501
+    locked: 0
+  - name: Immediate FG
+    uniqueID: 3009913235
+    locked: 0
+  - name: Far FG
+    uniqueID: 1095011171
+    locked: 0
+  - name: Vignette
+    uniqueID: 2661229189
+    locked: 0
+  - name: Over
+    uniqueID: 3184633723
+    locked: 0
+  - name: HUD
+    uniqueID: 1547378911
+    locked: 0
