@@ -1,0 +1,10 @@
+# Blender v2.79 (sub 0) OBJ File: 'Torvus Bog 2d.blend'
+# www.blender.org
+o BlurPlane
+g BlurPlane
+v -0.000000 -0.000000 -0.000001
+v -0.000000 1.000000 -0.000001
+v -1.000000 -0.000000 -0.000001
+v -1.000000 1.000000 -0.000001
+s off
+f 1 3 4 2
