@@ -71,8 +71,8 @@ jobs:
           repo: 'SFGrenade/SFCore'
           file: 'SFCoreUnity.dll'
           target: 'Unity/Assets/Assemblies/SFCore.dll'
-          token: '${{ secrets.GITHUB_TOKEN }}'
-          octokitBaseUrl: '{{ env.GIT_SERVER_API_URL }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          octokitBaseUrl: ${{ env.GIT_SERVER_API_URL }}
 
       - name: Build Unity
         uses: game-ci/unity-builder@v4
