@@ -62,7 +62,7 @@ jobs:
             echo "token=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_OUTPUT
             echo "url=https://api.github.com" >> $GITHUB_OUTPUT
           else
-            echo "token=${{ secrets.GITEA_TOKEN }}" >> $GITHUB_OUTPUT
+            echo "token=${{ secrets.USER_TOKEN }}" >> $GITHUB_OUTPUT
             echo "url=https://git.hk-modding.org/api/v1" >> $GITHUB_OUTPUT
           fi
         shell: bash
