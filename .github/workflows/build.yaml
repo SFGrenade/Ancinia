@@ -61,9 +61,11 @@ jobs:
           if [ "${{ github.server_url }}" == "https://github.com" ]; then
             echo "token=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_OUTPUT
             echo "url=https://api.github.com" >> $GITHUB_OUTPUT
+            echo "runAsHost=false" >> $GITHUB_OUTPUT
           else
             echo "token=${{ secrets.USER_TOKEN }}" >> $GITHUB_OUTPUT
             echo "url=https://git.hk-modding.org/api/v1" >> $GITHUB_OUTPUT
+            echo "runAsHost=true" >> $GITHUB_OUTPUT
           fi
         shell: bash
         working-directory: MonoBehaviour
@@ -88,6 +90,7 @@ jobs:
           projectPath: Unity
           buildsPath: Unity/build
           buildMethod: CreateAssetBundles.BuildAllAssetBundlesCompressed
+          runAsHostUser: ${{ steps.git_server_url.outputs.runAsHost }}
 
       - name: Install dependencies master
         run: dotnet restore
