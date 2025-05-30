@@ -90,7 +90,7 @@ jobs:
           projectPath: Unity
           buildsPath: Unity/build
           buildMethod: CreateAssetBundles.BuildAllAssetBundlesCompressed
-          runAsHostUser: ${{ steps.git_server_url.outputs.runAsHost }}
+          providerStrategy: 'local-system'  # what could possibly go wrong?
 
       - name: Install dependencies master
         run: dotnet restore
