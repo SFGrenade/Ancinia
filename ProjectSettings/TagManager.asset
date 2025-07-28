@@ -5,6 +5,78 @@ TagManager:
   serializedVersion: 2
   tags:
   - TileMap
+  - GameManager
+  - BlackOverlay
+  - HeroBox
+  - Nail Attack
+  - RespawnPoint
+  - HeroWalkable
+  - SceneManager
+  - HeroLight
+  - Battle Gate
+  - Battle Scene
+  - CameraParent
+  - Terrain
+  - Canvas
+  - UIManager
+  - Hero Spell
+  - Enemy Message
+  - Orb Target
+  - Vignette
+  - RespawnTrigger
+  - Boss Corpse
+  - Heart Piece
+  - TransitionGate
+  - UI Soul Orb
+  - Shade Marker
+  - Hud Camera
+  - Cinematic
+  - Roar
+  - Stag Grate
+  - Platform
+  - Boss
+  - GeoCounter
+  - CameraTarget
+  - StagMapMarker
+  - HeroFootsteps
+  - Save Icon
+  - HeroLightMain
+  - Beta End
+  - Shop Window
+  - Journal Up Msg
+  - Charms Pane
+  - Inventory Top
+  - Charm Get Msg
+  - Acid
+  - Soul Vessels
+  - Teleplane
+  - Water Surface
+  - Relic Get Msg
+  - Fireball Safe
+  - Baby Centipede
+  - Knight Hatchling
+  - Dream Attack
+  - Infected Flag
+  - Ghost Warrior NPC
+  - Extra Tag
+  - Dream Plant
+  - Dream Orb
+  - Geo
+  - Sharp Shadow
+  - Boss Attack
+  - Nail Beam
+  - Grub Bottle
+  - Colosseum Manager
+  - Wall Breaker
+  - Ignore Hatchling
+  - Hatchling Magnet
+  - Spell Vulnerable
+  - Hopper
+  - Set Extrapolate
+  - Orbit Shield
+  - Grimmchild
+  - WindyGrass
+  - Weaverling
   layers:
   - Default
   - TransparentFX
@@ -43,41 +115,41 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Far BG 2
-    uniqueID: 1909990891
+    uniqueID: 3315419377
     locked: 0
   - name: Far BG 1
-    uniqueID: 321414983
+    uniqueID: 1459018367
     locked: 0
   - name: Mid BG
-    uniqueID: 784953263
+    uniqueID: 4015848369
     locked: 0
   - name: Immediate BG
-    uniqueID: 2105649581
+    uniqueID: 2917268371
     locked: 0
   - name: Actors
-    uniqueID: 2463600691
+    uniqueID: 1270309357
     locked: 0
   - name: Player
-    uniqueID: 54332527
+    uniqueID: 3557629463
     locked: 0
   - name: Tiles
-    uniqueID: 3624887537
+    uniqueID: 3868594333
     locked: 0
   - name: MID Dressing
-    uniqueID: 1356907501
+    uniqueID: 3784110789
     locked: 0
   - name: Immediate FG
-    uniqueID: 3009913235
+    uniqueID: 31172181
     locked: 0
   - name: Far FG
-    uniqueID: 1095011171
+    uniqueID: 2577183099
     locked: 0
   - name: Vignette
-    uniqueID: 2661229189
+    uniqueID: 1038907033
     locked: 0
   - name: Over
-    uniqueID: 3184633723
+    uniqueID: 3945752401
     locked: 0
   - name: HUD
-    uniqueID: 1547378911
+    uniqueID: 629535577
     locked: 0
