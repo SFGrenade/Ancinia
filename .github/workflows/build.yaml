@@ -39,6 +39,10 @@ jobs:
           ref: Unity
           path: Unity
 
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.x
+
       - name: Setup MAPI
         uses: BadMagic100/setup-hk@v3
         with:
