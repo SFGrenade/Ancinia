@@ -79,30 +79,17 @@ jobs:
           token: ${{ steps.git_server_url.outputs.token }}
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
 
-      - name: Setup Unity
-        uses: kuler90/setup-unity@v1
-        id: unity-setup
-        with:
-          unity-modules: windows-mono
-          project-path: 'Unity'
-          self-hosted: true
-
-      - name: Activate Unity License
-        uses: kuler90/activate-unity@v1
-        id: unity-license
-        with:
-          unity-path: ${{ steps.unity-setup.unity-path }}
-          unity-username: ${{ secrets.UNITY_EMAIL }}
-          unity-password: ${{ secrets.UNITY_PASSWORD }}
-
       - name: Build Unity
-        uses: kuler90/build-unity@v1
-        id: unity-build
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          unity-path: ${{ steps.unity-setup.unity-path }}
-          project-path: 'Unity'
-          build-target: 'StandaloneWindows64'
-          build-method: 'CreateAssetBundles.BuildAllAssetBundlesCompressed'
+          targetPlatform: StandaloneWindows64
+          projectPath: Unity
+          buildsPath: Unity/build
+          buildMethod: CreateAssetBundles.BuildAllAssetBundlesCompressed
 
       - name: Install dependencies master
         run: dotnet restore
