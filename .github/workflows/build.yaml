@@ -80,7 +80,7 @@ jobs:
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
 
       - name: Setup Unity
-        uses: buildalon/unity-setup@v2
+        uses: RageAgainstThePixel/unity-setup@v2
         id: unity-setup
         with:
           version-file: 'Unity/ProjectSettings/ProjectVersion.txt'
@@ -88,7 +88,7 @@ jobs:
           architecture: 'x86_64'
 
       - name: Activate Unity License
-        uses: buildalon/activate-unity-license@v2
+        uses: RageAgainstThePixel/activate-unity-license@v2
         id: unity-license
         with:
           license: 'Personal'
@@ -96,7 +96,7 @@ jobs:
           password: ${{ secrets.UNITY_PASSWORD }}
 
       - name: Build Unity
-        uses: buildalon/unity-action@v3
+        uses: RageAgainstThePixel/unity-action@v3
         id: unity-build
         with:
           editor-path: ${{ steps.unity-setup.unity-editor-path }}
