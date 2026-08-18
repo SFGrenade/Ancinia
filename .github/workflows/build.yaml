@@ -84,7 +84,7 @@ jobs:
 
       - name: Build MonoBehaviour
         continue-on-error: true
-        run: apt update && apt upgrade && apt install p7zip-full 7zip
+        run: sudo apt update && sudo apt install p7zip-full 7zip
         shell: bash
         working-directory: MonoBehaviour
 
