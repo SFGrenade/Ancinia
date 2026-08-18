@@ -83,7 +83,7 @@ jobs:
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
 
       - name: Build Unity
-        uses: SFGrenade/build-unity@85c68e539bdd106a0b83accc1d4294eac8231851
+        uses: SFGrenade/build-unity@28a9abe3b7969779b160d2c1ba8c0873a2fc96f8
         with:
           project-path: Unity
           build-target: windows
