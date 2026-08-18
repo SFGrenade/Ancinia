@@ -82,9 +82,9 @@ jobs:
           token: ${{ steps.git_server_url.outputs.token }}
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
 
-      - name: Build MonoBehaviour
+      - name: Install 7-Zip
         continue-on-error: true
-        run: sudo apt update && sudo apt install p7zip-full 7zip
+        run: sudo apt update && sudo apt install p7zip-full p7zip-rar 7zip
         shell: bash
         working-directory: MonoBehaviour
 
