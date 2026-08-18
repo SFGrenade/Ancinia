@@ -83,18 +83,11 @@ jobs:
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
 
       - name: Build Unity
-        uses: SFGrenade/build-unity@5a3bff8c256889fa0026bd87c569e776aa49e538
+        uses: SFGrenade/build-unity@41c8cb14728fc57de663bb9c89ec8518ac37c469
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-          UNITY_NO_BANNER: "1"
-          UNITY_NON_INTERACTIVE: "1"
-          UNITY_NO_PAGER: "1"
-          UNITY_NO_ELEVATE: "1"
-          UNITY_NO_UPDATE_CHECK: "1"
-          UNITY_NO_CRASH_REPORT: "1"
-          UNITY_NO_CONSENT_PROMPT: "1"
         with:
           project-path: Unity
           build-target: windows
