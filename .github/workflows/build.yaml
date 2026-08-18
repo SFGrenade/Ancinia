@@ -39,9 +39,8 @@ jobs:
           ref: Unity
           path: Unity
 
-      - uses: actions/setup-dotnet@v6
-        with:
-          dotnet-version: 10.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
 
       - name: Setup MAPI
         uses: BadMagic100/setup-hk@v3
@@ -82,6 +81,13 @@ jobs:
           target: 'Unity/Assets/Assemblies/SFCore.dll'
           token: ${{ steps.git_server_url.outputs.token }}
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
+
+      - name: Build Unity
+        uses: SFGrenade/build-unity@85c68e539bdd106a0b83accc1d4294eac8231851
+        with:
+          project-path: Unity
+          build-target: windows
+          build-method: CreateAssetBundles.BuildAllAssetBundlesCompressed
 
       - name: Build Unity
         uses: game-ci/unity-builder@v4
