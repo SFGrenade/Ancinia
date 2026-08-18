@@ -83,7 +83,7 @@ jobs:
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
 
       - name: Build Unity
-        uses: SFGrenade/build-unity@632e5d5e62df7b13a1a08a90b1f53d8307ace5a9
+        uses: SFGrenade/build-unity@f3032c908c2f0c78046047664f2d44f9b3205df0
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
