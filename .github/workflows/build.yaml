@@ -82,6 +82,12 @@ jobs:
           token: ${{ steps.git_server_url.outputs.token }}
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
 
+      - name: Build MonoBehaviour
+        continue-on-error: true
+        run: apt update && apt upgrade && apt install p7zip-full 7zip
+        shell: bash
+        working-directory: MonoBehaviour
+
       - name: Build Unity
         uses: SFGrenade/build-unity@master
         env:
