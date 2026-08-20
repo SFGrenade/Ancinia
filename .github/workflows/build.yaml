@@ -22,7 +22,7 @@ jobs:
         targetPlatform:
           - StandaloneWindows64
     container:
-      image: lachee/unity-runner:ubuntu-${{ matrix.version }}-${{ matrix.platform.module }}-runner
+      image: ghcr.io/lachee/unity-runner:ubuntu-${{ matrix.version }}-${{ matrix.platform.module }}-runner
       options: --workdir=/workspace --rm
       env:
         UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -102,7 +102,7 @@ jobs:
         run: /build.sh
 
       - name: Upload Unity AssetBundles artifacts
-        uses: actions/upload-artifact@v3
+        uses: christopherhx/gitea-upload-artifact@v7
         with:
           name: Unity-AssetBundles
           path: Unity/Assets/AssetBundles/*
