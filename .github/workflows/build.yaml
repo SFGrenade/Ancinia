@@ -9,24 +9,40 @@ on:
     tags: [ '*' ]
 
 jobs:
-  build:
+  build-unity:
+    name: Build the unity AssetBundles
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: 
+          - 2020.2.2f1
+        platform: 
+          - { target: StandaloneWindows64, module: windows-mono, file: app.exe }
+        targetPlatform:
+          - StandaloneWindows64
+    container:
+      image: lachee/unity-runner:ubuntu-${{ matrix.version }}-${{ matrix.platform.module }}-runner
+      options: --workdir=/workspace --rm
+      env:
+        UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+        UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        UNITY_VERSION: ${{ matrix.version }}
+        BUILD_TARGET: ${{ matrix.platform.target }}
+        BUILD_NAME: ${{ matrix.platform.target}}
+        BUILD_PATH: build/${{ matrix.platform.target }}
+        BUILD_FILE: ${{ matrix.platform.file }}
+        BUILD_METHOD: CreateAssetBundles.BuildAllAssetBundlesCompressed
+        PROJECT_PATH: Unity
+        SKIP_ACTIVATION: false
+        MANUAL_EXIT: false
+        ENABLE_GPU: false
+        ENABLE_GRAPHICS: false
+        RUN_AS_HOST_USER: false
+        # CUSTOM_PARAMETERS: -nographics
 
     steps:
-      - name: Get tag number from tag string
-        id: tag_number
-        if: ${{ startsWith( github.ref, 'refs/tags/' ) }}
-        run: |
-          orig_tag="${{ github.ref_name }}"
-          echo "tag_number=${orig_tag/v/}" >> $GITHUB_OUTPUT
-        shell: bash
-
-      - name: Checkout master
-        uses: actions/checkout@v7
-        with:
-          ref: master
-          path: master
-
       - name: Checkout MonoBehaviour
         uses: actions/checkout@v7
         with:
@@ -82,34 +98,52 @@ jobs:
           token: ${{ steps.git_server_url.outputs.token }}
           octokitBaseUrl: ${{ steps.git_server_url.outputs.url }}
 
-      - name: Install 7-Zip
-        continue-on-error: true
-        run: sudo apt update && sudo apt install p7zip-full p7zip-rar 7zip
+      - name: Build Unity
+        run: /build.sh
+
+      - name: Upload Unity AssetBundles artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Unity-AssetBundles
+          path: Unity/Assets/AssetBundles/*
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get tag number from tag string
+        id: tag_number
+        if: ${{ startsWith( github.ref, 'refs/tags/' ) }}
+        run: |
+          orig_tag="${{ github.ref_name }}"
+          echo "tag_number=${orig_tag/v/}" >> $GITHUB_OUTPUT
         shell: bash
-        working-directory: MonoBehaviour
 
-      - name: Build Unity
-        uses: SFGrenade/build-unity@master
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+      - name: Checkout master
+        uses: actions/checkout@v7
         with:
-          project-path: Unity
-          build-target: windows
-          build-method: CreateAssetBundles.BuildAllAssetBundlesCompressed
+          ref: master
+          path: master
 
-      - name: Build Unity
-        uses: game-ci/unity-builder@v4
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+
+      - name: Setup MAPI
+        uses: BadMagic100/setup-hk@v3
         with:
-          targetPlatform: StandaloneWindows64
-          projectPath: Unity
-          buildsPath: Unity/build
-          buildMethod: CreateAssetBundles.BuildAllAssetBundlesCompressed
+          apiPath: HkRefs
+          dependencyFilePath: master/ModDependencies.txt
+
+      - name: Download Artifacts
+        uses: christopherhx/gitea-download-artifact@v8
+        with:
+          path: artifacts
+
+      - name: Move Unity AssetBundles to correct location
+        run: |
+          mkdir -p Unity/Assets/AssetBundles/
+          mv artifact/Unity-AssetBundles/* Unity/Assets/AssetBundles/
+        shell: bash
 
       - name: Install dependencies master
         run: dotnet restore
